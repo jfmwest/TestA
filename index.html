@@ -1,3 +1,16 @@
+<script>
+    window.onload = function() {
+        var grid = document.querySelector('.grid');
+        var wordLength = 6; // Example: change this based on the word you want to display
+
+        // Dynamically adjust the number of columns
+        if (wordLength === 5) {
+            grid.style.gridTemplateColumns = "repeat(5, 1fr)";
+        } else if (wordLength === 6) {
+            grid.style.gridTemplateColumns = "repeat(6, 1fr)";
+        }
+    };
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
