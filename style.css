@@ -17,19 +17,33 @@ body {
   margin: 0 auto; /* Center the grid */
 }
 
-.grid-cell {
-  width: 50px; /* Same width as height for a square shape */
-  height: 50px;
-  background-color: #d3d6da; /* Light gray */
-  border: 2px solid #878a8c; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem; /* Font size for letters */
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #000; /* Letter color */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for Wordle-style */
+    gap: 5px; /* Space between grid cells */
+    justify-content: center;
+    margin: 20px auto; /* Center the grid */
+    padding: 10px;
+}
+
+.grid div {
+    width: 60px; /* Adjust to match the size in your screenshot */
+    height: 60px; /* Keep square proportions */
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 60px; /* Vertically center text */
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #002c5f; /* Matches the grid's background */
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .grid div {
+        width: 50px; /* Smaller size for mobile */
+        height: 50px;
+        font-size: 16px;
+    }
 }
 
 /* Highlight colors for correct, present, and absent letters */
