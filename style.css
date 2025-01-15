@@ -26,16 +26,17 @@ You gave me adjustments to a file, (below) how do I adjust it on GitHub?
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 columns for Wordle-style */
+    grid-template-columns: repeat(5, 1fr); /* Adjusted for Wordle-style */
     gap: 5px; /* Space between grid cells */
     justify-content: center;
     margin: 20px auto; /* Center the grid */
     padding: 10px;
+    width: calc(60px * 5 + 5px * 4); /* Ensure it fits exactly 5 columns */
 }
 
 .grid div {
-    width: 60px; /* Adjust to match the size in your screenshot */
-    height: 60px; /* Keep square proportions */
+    width: 60px;
+    height: 60px;
     border: 2px solid #fff;
     text-align: center;
     line-height: 60px; /* Vertically center text */
@@ -45,6 +46,18 @@ You gave me adjustments to a file, (below) how do I adjust it on GitHub?
     color: white;
 }
 
+@media (max-width: 600px) {
+    .grid {
+        width: calc(50px * 5 + 5px * 4); /* Resize for smaller screens */
+    }
+
+    .grid div {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+    }
+}
 @media (max-width: 600px) {
     .grid div {
         width: 50px; /* Smaller size for mobile */
