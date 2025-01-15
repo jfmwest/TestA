@@ -39,6 +39,10 @@ body {
 }
 
 @media (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(5, 1fr); /* Keep 5 columns on mobile */
+    }
+
     .grid div {
         width: 50px; /* Smaller size for mobile */
         height: 50px;
